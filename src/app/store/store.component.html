@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-danger text-white">
+         
+            <div class="nav-bar"> <h1 class="text-center">Dog Store</h1>
+                <cart-summary></cart-summary>
+            </div>    
+   
+        </div>
+    </div>
+
+    <div class="row text-white">
+        <div class="col-3 bg-info p-2 " >
+           Total  Categories {{categories.length}}
+            <!--Home to show all products main -->
+        
+            <button class="btn btn-block btn-outline-dark" (click)="changeCategory">
+                HOME
+            </button>
+            <!--Categories Button-->
+            <button *ngFor="let cat of categories" class= "btn btn-outline-dark btn-block"
+         [class.active]="cat == selectedCategory" (click)="changeCategory(cat)">
+                {{cat}}
+            
+            </button>
+
+
+            <!--Admin Button-->
+
+            <button class="btn btn-block  btn-danger m-t-3"  routerLink = "/admin">
+                Admin
+            </button>
+
+
+
+        
+    
+        </div>
+
+        <div class="col-9 bg-success p-2">
+            Total Products {{products.length}}
+
+            <div *ngFor = "let product of products" class="card m-1 p-1 bg-dark">
+                <h4>
+                    Name: {{product.name}}
+                    <span class="badge badge-pill badge-success float-right p-1 ">
+                     Price: {{product.price | currency: "INR"}}
+                    </span>
+                </h4>
+                <div class="card-text bg-dark  p-1 ">
+                    {{product.description}}
+                    <button class="btn btn-info btn-sm float-right"
+                    (click)="addProductToCart(product)">
+                        Add To Cart
+                    </button>
+
+                    
+
+                </div>
+                 
+
+            </div>
+    </div>
+
+    </div>
+ 
