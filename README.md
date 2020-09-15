@@ -1,5 +1,8 @@
 # Onlinestore
 
+Note: To run this project kindly browse to http://localhost:4200/store as i had used store as my default component "/store" will act as the homepage of this project
+      otherwise it will just show a blank file.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
 ## Development server
